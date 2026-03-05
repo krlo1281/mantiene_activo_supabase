@@ -1,0 +1,98 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  username  String   @unique
+  password  String
+  role      String   @default("OPERATOR") // ADMIN, OPERATOR
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Company {
+  id        String   @id @default(uuid())
+  ruc       String?  @unique
+  name      String
+  address   String?
+  phone     String?
+  email     String?
+  workers   Worker[]
+  assignments Assignment[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Worker {
+  id          String   @id @default(uuid())
+  dni         String   @unique
+  firstName   String
+  lastName    String
+  companies   Company[]
+  assignments Assignment[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Dosimeter {
+  id          String   @id @default(uuid())
+  code        String   @unique
+  type        String   @default("FILM") // FILM, TLD
+  status      String   @default("AVAILABLE") // AVAILABLE, ASSIGNED, RETIRED
+  assignments Assignment[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Period {
+  id          String   @id @default(uuid())
+  month       Int
+  year        Int
+  status      String   @default("OPEN") // OPEN, CLOSED
+  backgroundDosimeterCode String?
+  backgroundHp10 Float?
+  backgroundHp007 Float?
+  assignments Assignment[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([month, year])
+}
+
+model Assignment {
+  id          String   @id @default(uuid())
+  periodId    String
+  period      Period   @relation(fields: [periodId], references: [id])
+  workerId    String
+  worker      Worker   @relation(fields: [workerId], references: [id])
+  dosimeterId String
+  dosimeter   Dosimeter @relation(fields: [dosimeterId], references: [id])
+  companyId   String
+  company     Company   @relation(fields: [companyId], references: [id])
+  reading     Reading?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([periodId, dosimeterId]) // Dosimeter assigned once per period
+}
+
+model Reading {
+  id           String     @id @default(uuid())
+  assignmentId String     @unique
+  assignment   Assignment @relation(fields: [assignmentId], references: [id])
+  hp10         Float
+  hp007        Float
+  rawHp10      Float?
+  rawHp007     Float?
+  readDate     DateTime
+  source       String     @default("MANUAL") // MANUAL, CSV
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+}

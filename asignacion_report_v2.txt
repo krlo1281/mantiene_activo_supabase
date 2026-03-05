@@ -1,0 +1,63 @@
+Header found at row index: 2
+Columns found: ['Unnamed: 0', 'Nro', 'EMPRESA', 'F. ENSAMBLE', 'DNI', 'APELLIDOS', 'NOMBRES', 'MES', 'AÑO', 'DOSIMETRO', 'DEVOLUCION', 'Columna2', 'Columna1', 'INFO QR', 'Unnamed: 14', 'Unnamed: 15', 'Unnamed: 16', 'Unnamed: 17', 'SI']
+
+Total valid rows (with DNI): 149
+
+Unique Companies (20):
+ - CENTRO DE DIAGNOSTICO MEDICO CHICLAYO S.A.C
+ - CENTRO MEDICO Y SERVICIOS OCUPACIONALES MI SALUD
+ - CLINICA VIRGEN DEL PILAR S.C.R.L.
+ - COASACA
+ - DAVID LARREA
+ - DIAGNO SERVICIOS INTEGRALES S.A.C.
+ - HOSPITAL METROPOLITANO S.A.C
+ - DIAGNOSTICO MEDICO  ESPECIALIZADO S.A.C. 
+ - MEDIMAGEN S.A.C.
+ - FIS MED S.A.C.
+ - GENELECTRIC S.A.
+ - GUEM S.A.C. 
+ - SOCIEDAD PEDIATRICA ESPECIALIZADA E.I.R.L. 
+ - PULSO CORPORACION MEDICA S.A.C.
+ - KAVELG S.A.C.
+ - NEUMOVG
+ - PRIMCO
+ - SERVICIOS MEDICOS DR.GARNICA E.I.R.L
+ - TERESSALUD
+ - nan
+
+Unique Workers (by DNI): 82
+
+Assignments per Period:
+AÑO     MES      
+2023.0  AGOSTO       26
+        JULIO         6
+        OCTUBRE      75
+        SETIEMBRE    41
+2024.0  AGOSTO        1
+
+Potential Reading Columns: ['Columna2', 'Columna1', 'SI']
+
+Analysis of column 'Columna2':
+ - Non-null count: 3
+ - Sample values: [2.]
+ - Sample rows:
+     DNI              NOMBRES         APELLIDOS       MES  Columna2
+46459186 MARIA DE LOS ANGELES ARREDONDO CAMACHO   OCTUBRE       2.0
+46459186 MARIA DE LOS ANGELES ARREDONDO CAMACHO    AGOSTO       2.0
+46459186 MARIA DE LOS ANGELES ARREDONDO CAMACHO SETIEMBRE       2.0
+
+Analysis of column 'Columna1':
+ - Non-null count: 3
+ - Sample values: [1.]
+ - Sample rows:
+     DNI              NOMBRES         APELLIDOS       MES  Columna1
+46459186 MARIA DE LOS ANGELES ARREDONDO CAMACHO   OCTUBRE       1.0
+46459186 MARIA DE LOS ANGELES ARREDONDO CAMACHO    AGOSTO       1.0
+46459186 MARIA DE LOS ANGELES ARREDONDO CAMACHO SETIEMBRE       1.0
+
+Analysis of column 'SI':
+ - Non-null count: 1
+ - Sample values: ['NO']
+ - Sample rows:
+     DNI NOMBRES         APELLIDOS     MES SI
+75706614   OSCAR GORDILLO TARRILLO OCTUBRE NO

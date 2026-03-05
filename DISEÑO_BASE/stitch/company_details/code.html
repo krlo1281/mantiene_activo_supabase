@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Company Details - Dosimetry Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0d141b] dark:text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7edf3] dark:border-b-gray-700 bg-white dark:bg-[#1a2632] px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#0d141b] dark:text-white">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_319)">
+<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_6_319"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Dosimetry Portal</h2>
+</div>
+<div class="flex items-center gap-9 hidden lg:flex">
+<a class="text-[#0d141b] dark:text-gray-300 dark:hover:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-primary dark:text-primary text-sm font-bold leading-normal" href="#">Companies</a>
+<a class="text-[#0d141b] dark:text-gray-300 dark:hover:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Reports</a>
+<a class="text-[#0d141b] dark:text-gray-300 dark:hover:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Settings</a>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<label class="flex flex-col min-w-40 !h-10 max-w-64 hidden sm:flex">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#4c739a] flex border-none bg-[#e7edf3] dark:bg-[#2c3b4a] items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d141b] dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#e7edf3] dark:bg-[#2c3b4a] focus:border-none h-full placeholder:text-[#4c739a] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search companies..." value=""/>
+</div>
+</label>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAW0QZM6kX7Ub-eaekXaS33fM3P0_mWfdQZu7FCd7VtmlZSdZz-OuYzqStl0JLdsG7eFch8B5icvtCNYh7wxX_5-ui3sqXozWe2hF_lZ0RfD6qtTjh4NYbxzqD-S2ACUsWaS14sHqI_oNKhBpVir3hC21n6fcQDv5cUHJIZg2dRcAuNtdlaqu6jryAjlqYkCpfStE929axYJRFqaff_iTecX5DTr5JpNuZhemlQgaCL5LHKhYzlAaeTgRmhZv6Onfr7uYrE8RUHdg");'></div>
+</div>
+</header>
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-6 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+<!-- Breadcrumbs -->
+<div class="flex flex-wrap gap-2 px-4 py-2">
+<a class="text-[#4c739a] dark:text-gray-400 hover:text-primary text-sm font-medium leading-normal" href="#">Home</a>
+<span class="text-[#4c739a] dark:text-gray-500 text-sm font-medium leading-normal">/</span>
+<a class="text-[#4c739a] dark:text-gray-400 hover:text-primary text-sm font-medium leading-normal" href="#">Companies</a>
+<span class="text-[#4c739a] dark:text-gray-500 text-sm font-medium leading-normal">/</span>
+<span class="text-[#0d141b] dark:text-gray-200 text-sm font-medium leading-normal">Acme Industries</span>
+</div>
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between gap-3 p-4 items-end">
+<div class="flex min-w-72 flex-col gap-2">
+<div class="flex items-center gap-3">
+<h1 class="text-[#0d141b] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Acme Industries</h1>
+<span class="bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 text-xs font-bold px-2 py-1 rounded-full border border-green-200 dark:border-green-800">Active</span>
+</div>
+<p class="text-[#4c739a] dark:text-gray-400 text-base font-normal leading-normal">ID: #8932-ACME | Monitoring since Apr 2018 | Seattle, WA</p>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-blue-600 text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors shadow-sm">
+<span class="material-symbols-outlined mr-2 text-[18px]">edit</span>
+<span class="truncate">Edit Details</span>
+</button>
+</div>
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-[#cfdbe7] dark:border-gray-700 bg-white dark:bg-[#1a2632] shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">radiology</span>
+<p class="text-[#4c739a] dark:text-gray-400 text-sm font-medium leading-normal">Total Dose (YTD)</p>
+</div>
+<div class="flex items-end gap-2">
+<p class="text-[#0d141b] dark:text-white tracking-tight text-3xl font-bold leading-tight">45.2 <span class="text-lg font-medium text-[#4c739a] dark:text-gray-500">mSv</span></p>
+<p class="text-green-600 dark:text-green-400 text-xs font-bold mb-1.5 flex items-center bg-green-100 dark:bg-green-900/30 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px] mr-0.5">arrow_upward</span> 2.1%
+                                </p>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-[#cfdbe7] dark:border-gray-700 bg-white dark:bg-[#1a2632] shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">group</span>
+<p class="text-[#4c739a] dark:text-gray-400 text-sm font-medium leading-normal">Active Workers</p>
+</div>
+<div class="flex items-end gap-2">
+<p class="text-[#0d141b] dark:text-white tracking-tight text-3xl font-bold leading-tight">124</p>
+<p class="text-green-600 dark:text-green-400 text-xs font-bold mb-1.5 flex items-center bg-green-100 dark:bg-green-900/30 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px] mr-0.5">add</span> 5
+                                </p>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-[#cfdbe7] dark:border-gray-700 bg-white dark:bg-[#1a2632] shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">developer_board</span>
+<p class="text-[#4c739a] dark:text-gray-400 text-sm font-medium leading-normal">Assigned Dosimeters</p>
+</div>
+<div class="flex items-end gap-2">
+<p class="text-[#0d141b] dark:text-white tracking-tight text-3xl font-bold leading-tight">130</p>
+<p class="text-[#4c739a] dark:text-gray-500 text-xs font-medium mb-1.5">No change</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 border border-[#cfdbe7] dark:border-gray-700 bg-white dark:bg-[#1a2632] shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+<p class="text-[#4c739a] dark:text-gray-400 text-sm font-medium leading-normal">Compliance Rate</p>
+</div>
+<div class="flex items-end gap-2">
+<p class="text-[#0d141b] dark:text-white tracking-tight text-3xl font-bold leading-tight">98%</p>
+<p class="text-green-600 dark:text-green-400 text-xs font-bold mb-1.5 flex items-center bg-green-100 dark:bg-green-900/30 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px] mr-0.5">arrow_upward</span> 1%
+                                </p>
+</div>
+</div>
+</div>
+<!-- Tabs -->
+<div class="px-4 mt-2">
+<div class="flex border-b border-[#cfdbe7] dark:border-gray-700 gap-8">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#4c739a] dark:text-gray-400 pb-[13px] pt-4 hover:text-primary transition-colors" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">General Info</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-[#0d141b] dark:text-white pb-[13px] pt-4" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Workers</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#4c739a] dark:text-gray-400 pb-[13px] pt-4 hover:text-primary transition-colors" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Assigned Dosimeters</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#4c739a] dark:text-gray-400 pb-[13px] pt-4 hover:text-primary transition-colors" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Billing History</p>
+</a>
+</div>
+</div>
+<!-- Tab Content: Active Workers List -->
+<div class="p-4 flex flex-col gap-4">
+<div class="flex items-center justify-between py-2">
+<h3 class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight">Active Workers List</h3>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-lg h-9 px-3 bg-white dark:bg-[#1a2632] border border-[#cfdbe7] dark:border-gray-700 text-[#0d141b] dark:text-white text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined text-[18px] mr-2">filter_list</span> Filter
+                                </button>
+<button class="flex items-center justify-center rounded-lg h-9 px-3 bg-primary hover:bg-blue-600 text-white text-sm font-medium transition-colors">
+<span class="material-symbols-outlined text-[18px] mr-2">person_add</span> Add Worker
+                                </button>
+</div>
+</div>
+<!-- Worker Table -->
+<div class="overflow-x-auto rounded-xl border border-[#cfdbe7] dark:border-gray-700 bg-white dark:bg-[#1a2632] shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#f8fafc] dark:bg-[#141f2a] border-b border-[#cfdbe7] dark:border-gray-700">
+<th class="px-6 py-4 text-xs font-bold text-[#4c739a] dark:text-gray-400 uppercase tracking-wider">Worker Name</th>
+<th class="px-6 py-4 text-xs font-bold text-[#4c739a] dark:text-gray-400 uppercase tracking-wider">ID Number</th>
+<th class="px-6 py-4 text-xs font-bold text-[#4c739a] dark:text-gray-400 uppercase tracking-wider">Department</th>
+<th class="px-6 py-4 text-xs font-bold text-[#4c739a] dark:text-gray-400 uppercase tracking-wider">Last Dose</th>
+<th class="px-6 py-4 text-xs font-bold text-[#4c739a] dark:text-gray-400 uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 text-xs font-bold text-[#4c739a] dark:text-gray-400 uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#cfdbe7] dark:divide-gray-700">
+<!-- Row 1 -->
+<tr class="group hover:bg-gray-50 dark:hover:bg-[#1e2b38] transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold">JD</div>
+<div>
+<p class="text-sm font-bold text-[#0d141b] dark:text-white">John Doe</p>
+<p class="text-xs text-[#4c739a] dark:text-gray-400">Radiographer</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-[#0d141b] dark:text-gray-300">WK-2938</td>
+<td class="px-6 py-4 text-sm text-[#0d141b] dark:text-gray-300">Imaging</td>
+<td class="px-6 py-4">
+<div class="text-sm text-[#0d141b] dark:text-gray-300 font-medium">0.45 mSv</div>
+<div class="text-xs text-[#4c739a] dark:text-gray-500">Oct 2023</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-300 border border-green-200 dark:border-green-800">
+                                                Active
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-[#4c739a] hover:text-primary dark:text-gray-400 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-gray-50 dark:hover:bg-[#1e2b38] transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8" data-alt="Worker profile picture - Sarah Smith" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC-2ZxXPsh93eoaNHHvAMl9tRgetJxXHmfREXv6Mw10ewS1wRcCLUDsyBz70ZMBK3caT2qH45OVu0vibGmpRW8GTa2i2p3kj9vsDdZ56e8CAIkPcXiXFl1khb1HOiAgwXhHbRXJn9n2RcA_KYWW3kM72q2kK4UuGWuXiK-VthAuxYsOanVUx4NljIbEDPSXyAPwQTnahp54lfEr0-SKsrn-iN1WKdZiiPCfx7bR7Hv52VOfUgpM5xm__KNmMjjKiR3tkaCEzILi7A");'></div>
+<div>
+<p class="text-sm font-bold text-[#0d141b] dark:text-white">Sarah Smith</p>
+<p class="text-xs text-[#4c739a] dark:text-gray-400">Lab Technician</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-[#0d141b] dark:text-gray-300">WK-1029</td>
+<td class="px-6 py-4 text-sm text-[#0d141b] dark:text-gray-300">Research</td>
+<td class="px-6 py-4">
+<div class="text-sm text-[#0d141b] dark:text-gray-300 font-medium">0.12 mSv</div>
+<div class="text-xs text-[#4c739a] dark:text-gray-500">Oct 2023</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-300 border border-green-200 dark:border-green-800">
+                                                Active
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-[#4c739a] hover:text-primary dark:text-gray-400 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-gray-50 dark:hover:bg-[#1e2b38] transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-xs font-bold">MJ</div>
+<div>
+<p class="text-sm font-bold text-[#0d141b] dark:text-white">Michael Johnson</p>
+<p class="text-xs text-[#4c739a] dark:text-gray-400">Cardiologist</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-[#0d141b] dark:text-gray-300">WK-9921</td>
+<td class="px-6 py-4 text-sm text-[#0d141b] dark:text-gray-300">Cardiology</td>
+<td class="px-6 py-4">
+<div class="text-sm text-[#0d141b] dark:text-gray-300 font-medium">0.89 mSv</div>
+<div class="text-xs text-[#4c739a] dark:text-gray-500">Oct 2023</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-300 border border-yellow-200 dark:border-yellow-800">
+                                                On Leave
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-[#4c739a] hover:text-primary dark:text-gray-400 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="group hover:bg-gray-50 dark:hover:bg-[#1e2b38] transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8" data-alt="Worker profile picture - Emily Chen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAl151Py90nEkJ0T1h0tMiiZ9qEtoXUAm5USwTWJiPEmTQSaIQgQGxpK4R7Qi3X9f69Whlg1bx54vhW8abLH9fWSpLXBILkWpHTdbQRfckHX6LeMd2_CQt2YqCOrPmnCo2EsrgDKD3Ik5XNjDjPqLtFdO4RnNES3BgO-Y2D06NZxXmwyV6jj_kOQ6y-k9F4kp532K-0pQVzRbzeTYuaAFudnFCS3KmHXapq5joJ92Pf8ET6U99RxvVx1iwL2F-ZHMLmOp6osG7u_A");'></div>
+<div>
+<p class="text-sm font-bold text-[#0d141b] dark:text-white">Emily Chen</p>
+<p class="text-xs text-[#4c739a] dark:text-gray-400">Radiologist</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-[#0d141b] dark:text-gray-300">WK-3382</td>
+<td class="px-6 py-4 text-sm text-[#0d141b] dark:text-gray-300">Imaging</td>
+<td class="px-6 py-4">
+<div class="text-sm text-red-600 dark:text-red-400 font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">warning</span> 1.85 mSv
+                                            </div>
+<div class="text-xs text-[#4c739a] dark:text-gray-500">Oct 2023</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/40 dark:text-green-300 border border-green-200 dark:border-green-800">
+                                                Active
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-[#4c739a] hover:text-primary dark:text-gray-400 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="group hover:bg-gray-50 dark:hover:bg-[#1e2b38] transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center text-xs font-bold">RB</div>
+<div>
+<p class="text-sm font-bold text-[#0d141b] dark:text-white">Robert Brown</p>
+<p class="text-xs text-[#4c739a] dark:text-gray-400">Maintenance</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-[#0d141b] dark:text-gray-300">WK-1144</td>
+<td class="px-6 py-4 text-sm text-[#0d141b] dark:text-gray-300">Facilities</td>
+<td class="px-6 py-4">
+<div class="text-sm text-[#0d141b] dark:text-gray-300 font-medium">0.05 mSv</div>
+<div class="text-xs text-[#4c739a] dark:text-gray-500">Oct 2023</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300 border border-gray-200 dark:border-gray-600">
+                                                Inactive
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-[#4c739a] hover:text-primary dark:text-gray-400 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination -->
+<div class="flex items-center justify-between px-6 py-4 border-t border-[#cfdbe7] dark:border-gray-700 bg-white dark:bg-[#1a2632]">
+<div class="text-sm text-[#4c739a] dark:text-gray-400">
+                                    Showing <span class="font-medium">1</span> to <span class="font-medium">5</span> of <span class="font-medium">124</span> results
+                                </div>
+<div class="flex gap-2">
+<button class="px-3 py-1 rounded border border-[#cfdbe7] dark:border-gray-700 bg-white dark:bg-[#2c3b4a] text-[#0d141b] dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 text-sm disabled:opacity-50" disabled="">Previous</button>
+<button class="px-3 py-1 rounded border border-[#cfdbe7] dark:border-gray-700 bg-white dark:bg-[#2c3b4a] text-[#0d141b] dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 text-sm">Next</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

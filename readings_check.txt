@@ -1,0 +1,17 @@
+
+--- Sheet: ASIGNACIÓN ---
+Column 11 (Potential Hp10?) stats:
+Count: 4
+Unique values: [nan 'Columna2' '2']
+
+Column 12 (Potential Hp007?) stats:
+Count: 4
+Unique values: [nan 'Columna1' 1]
+
+Rows with data in Col 11 or 12:
+| Unnamed: 0   | LOPEZ VALENCIA   | Unnamed: 2                         | Unnamed: 3          | Unnamed: 4   | Unnamed: 5        | Unnamed: 6           | Unnamed: 7   | Unnamed: 8   | Unnamed: 9   | Unnamed: 10   | Unnamed: 11   | Unnamed: 12   | Unnamed: 13                                                | Unnamed: 14   | Unnamed: 15   | Unnamed: 16   | Unnamed: 17   | Unnamed: 18   |
+|:-------------|:-----------------|:-----------------------------------|:--------------------|:-------------|:------------------|:---------------------|:-------------|:-------------|:-------------|:--------------|:--------------|:--------------|:-----------------------------------------------------------|:--------------|:--------------|:--------------|:--------------|:--------------|
+| nan          | Nro              | EMPRESA                            | F. ENSAMBLE         | DNI          | APELLIDOS         | NOMBRES              | MES          | AÑO          | DOSIMETRO    | DEVOLUCION    | Columna2      | Columna1      | INFO QR                                                    | nan           | nan           | nan           | nan           | SI            |
+| nan          | 48               | DIAGNO SERVICIOS INTEGRALES S.A.C. | 2023-09-24 00:00:00 | 46459186     | ARREDONDO CAMACHO | MARIA DE LOS ANGELES | OCTUBRE      | 2023         | 1725         | NO            | 2             | 1             | ARREDONDO CAMACHO MARIA DE LOS ANGELES OCTUBRE 2023 1725   | nan           | nan           | nan           | nan           | nan           |
+| nan          | 30               | DIAGNO SERVICIOS INTEGRALES S.A.C. | nan                 | 46459186     | ARREDONDO CAMACHO | MARIA DE LOS ANGELES | AGOSTO       | 2023         | 2021         | SI            | 2             | 1             | ARREDONDO CAMACHO MARIA DE LOS ANGELES AGOSTO 2023 2021    | nan           | nan           | nan           | nan           | nan           |
+| nan          | 40               | DIAGNO SERVICIOS INTEGRALES S.A.C. | nan                 | 46459186     | ARREDONDO CAMACHO | MARIA DE LOS ANGELES | SETIEMBRE    | 2023         | 1049         | SI            | 2             | 1             | ARREDONDO CAMACHO MARIA DE LOS ANGELES SETIEMBRE 2023 1049 | nan           | nan           | nan           | nan           | nan           |

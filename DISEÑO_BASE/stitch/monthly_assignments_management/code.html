@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Monthly Assignments - Dosimetry Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-dark": "#0e62b8",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "card-light": "#ffffff",
+                        "card-dark": "#1b2631",
+                        "text-main-light": "#0d141b",
+                        "text-main-dark": "#e7edf3",
+                        "text-secondary-light": "#4c739a",
+                        "text-secondary-dark": "#94a3b8",
+                        "border-light": "#e7edf3",
+                        "border-dark": "#2d3b4e",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for table if needed */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark transition-colors duration-200">
+<div class="relative flex h-screen w-full flex-col overflow-hidden group/design-root font-display">
+<!-- TopNavBar -->
+<header class="flex-none z-10 bg-card-light dark:bg-card-dark border-b border-border-light dark:border-border-dark px-4 lg:px-10 py-3 transition-colors duration-200">
+<div class="flex items-center justify-between whitespace-nowrap max-w-[1440px] mx-auto w-full">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-text-main-light dark:text-white">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] hidden sm:block">Dosimetry Portal</h2>
+</div>
+<!-- Search Bar -->
+<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark overflow-hidden focus-within:ring-2 focus-within:ring-primary/50 transition-all">
+<div class="text-text-secondary-light dark:text-text-secondary-dark flex items-center justify-center pl-3">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 resize-none overflow-hidden bg-transparent text-text-main-light dark:text-text-main-dark focus:outline-0 border-none h-full placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark px-3 text-sm font-normal leading-normal" placeholder="Search workers..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-text-main-light dark:text-text-main-dark hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Dashboard</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Assignments</a>
+<a class="text-text-main-light dark:text-text-main-dark hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Reports</a>
+<a class="text-text-main-light dark:text-text-main-dark hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Users</a>
+<a class="text-text-main-light dark:text-text-main-dark hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center size-8 rounded-full hover:bg-background-light dark:hover:bg-gray-800 transition-colors text-text-secondary-light dark:text-text-secondary-dark relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 size-2 bg-red-500 rounded-full border-2 border-card-light dark:border-card-dark"></span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-9 border border-border-light dark:border-border-dark cursor-pointer" data-alt="User profile avatar showing a smiling professional in a lab coat" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBqBvOIEhP4uei3ZS9EKAXXnJAfzAGCzecxZYPvAoaozRUK5i1h3E2cCA5lFN9y7iGT6ZM7j_v3rO2Mk98nf9mXBUnjgQKW3NYX3ZBRckmHBgmRmIzTp6kyURm0Q6X0sCXozyuQNyJv25e3H7hTal5tTCjDj8HKeisNptnoAVyEpXh6W-xfTQyBmKu4qeZIdhKji_boEyL50l9ksRh8_hjozxKAhTkQRWgyAa6eaLR6cObcKRb7WD_yAbhlpHlARsPZflBPMo9dUg");'></div>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto px-4 md:px-10 lg:px-40 py-8 scroll-smooth">
+<div class="max-w-[1200px] mx-auto flex flex-col gap-8 pb-12">
+<!-- Page Heading -->
+<div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+<div class="flex flex-col gap-2">
+<h1 class="text-text-main-light dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">Monthly Assignments</h1>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-base font-normal leading-normal max-w-2xl">Manage dosimeter assignments for the current monitoring period (October 2023). Ensure all active workers are equipped.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-5 bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark text-text-main-light dark:text-text-main-dark hover:bg-gray-50 dark:hover:bg-gray-800 text-sm font-bold shadow-sm transition-all">
+<span class="material-symbols-outlined text-[20px]">file_download</span>
+<span class="truncate">Export CSV</span>
+</button>
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-5 bg-primary hover:bg-primary-dark text-white text-sm font-bold shadow-md shadow-primary/20 transition-all">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span class="truncate">Generate Report</span>
+</button>
+</div>
+</div>
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<!-- Stat 1 -->
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium uppercase tracking-wider">Total Workers</p>
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark">group</span>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<p class="text-text-main-light dark:text-white text-3xl font-bold leading-tight">142</p>
+<span class="flex items-center text-emerald-600 dark:text-emerald-400 text-sm font-medium bg-emerald-50 dark:bg-emerald-900/30 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px] mr-0.5">trending_up</span>
+                                +2%
+                            </span>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium uppercase tracking-wider">Assignments Complete</p>
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark">assignment_turned_in</span>
+</div>
+<div class="flex items-baseline gap-2 mt-1">
+<p class="text-text-main-light dark:text-white text-3xl font-bold leading-tight">130</p>
+<span class="flex items-center text-emerald-600 dark:text-emerald-400 text-sm font-medium bg-emerald-50 dark:bg-emerald-900/30 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px] mr-0.5">trending_up</span>
+                                +5%
+                            </span>
+</div>
+<div class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-1.5 mt-2">
+<div class="bg-primary h-1.5 rounded-full" style="width: 91%"></div>
+</div>
+</div>
+<!-- Stat 3 -->
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-card-light dark:bg-card-dark border border-red-100 dark:border-red-900/30 shadow-sm relative overflow-hidden">
+<div class="absolute right-0 top-0 p-6 opacity-5">
+<span class="material-symbols-outlined text-8xl">warning</span>
+</div>
+<div class="flex justify-between items-start relative z-10">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium uppercase tracking-wider">Missing Assignments</p>
+<span class="material-symbols-outlined text-red-500">warning</span>
+</div>
+<div class="flex items-baseline gap-2 mt-1 relative z-10">
+<p class="text-text-main-light dark:text-white text-3xl font-bold leading-tight">12</p>
+<span class="flex items-center text-red-600 dark:text-red-400 text-sm font-medium bg-red-50 dark:bg-red-900/30 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px] mr-0.5">trending_down</span>
+                                -8%
+                            </span>
+</div>
+<p class="text-xs text-red-600 dark:text-red-400 mt-2 font-medium relative z-10">Action required before Oct 31</p>
+</div>
+</div>
+<!-- Filters & Actions -->
+<div class="flex flex-col gap-4">
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div class="flex flex-wrap gap-2">
+<button class="group flex h-9 items-center justify-center gap-x-2 rounded-lg bg-primary text-white pl-4 pr-3 shadow-sm transition-all hover:bg-primary-dark">
+<span class="text-sm font-medium leading-normal">All Workers</span>
+</button>
+<button class="group flex h-9 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-card-dark border border-border-light dark:border-border-dark text-text-main-light dark:text-text-main-dark pl-4 pr-3 shadow-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-all">
+<span class="text-sm font-medium leading-normal">Assigned</span>
+<span class="material-symbols-outlined text-[18px] text-text-secondary-light dark:text-text-secondary-dark">expand_more</span>
+</button>
+<button class="group flex h-9 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-card-dark border border-border-light dark:border-border-dark text-text-main-light dark:text-text-main-dark pl-4 pr-3 shadow-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-all">
+<span class="text-sm font-medium leading-normal">Unassigned</span>
+<span class="material-symbols-outlined text-[18px] text-text-secondary-light dark:text-text-secondary-dark">expand_more</span>
+</button>
+<button class="group flex h-9 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-card-dark border border-border-light dark:border-border-dark text-text-main-light dark:text-text-main-dark pl-4 pr-3 shadow-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-all">
+<span class="text-sm font-medium leading-normal">High Risk Area</span>
+<span class="material-symbols-outlined text-[18px] text-text-secondary-light dark:text-text-secondary-dark">expand_more</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<div class="relative">
+<input class="h-9 rounded-lg border-border-light dark:border-border-dark bg-white dark:bg-card-dark text-sm pl-9 pr-4 focus:ring-primary focus:border-primary text-text-main-light dark:text-text-main-dark w-48 lg:w-64" placeholder="Filter by name..." type="text"/>
+<span class="material-symbols-outlined absolute left-2.5 top-2 text-[20px] text-text-secondary-light dark:text-text-secondary-dark">filter_list</span>
+</div>
+</div>
+</div>
+<!-- Table Container -->
+<div class="bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark rounded-xl overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-background-light/50 dark:bg-background-dark/50 border-b border-border-light dark:border-border-dark">
+<th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-text-secondary-light dark:text-text-secondary-dark w-1/4">Worker Name</th>
+<th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-text-secondary-light dark:text-text-secondary-dark hidden sm:table-cell">ID Number</th>
+<th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-text-secondary-light dark:text-text-secondary-dark hidden md:table-cell">Department</th>
+<th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-text-secondary-light dark:text-text-secondary-dark hidden lg:table-cell">Dosimeter Serial</th>
+<th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-text-secondary-light dark:text-text-secondary-dark">Status</th>
+<th class="px-6 py-4 text-xs font-semibold uppercase tracking-wider text-text-secondary-light dark:text-text-secondary-dark text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-light dark:divide-border-dark">
+<!-- Row 1: Assigned -->
+<tr class="hover:bg-background-light/50 dark:hover:bg-background-dark/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xs font-bold">JD</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-text-main-light dark:text-white">John Doe</span>
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark sm:hidden">EMP-001</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-text-secondary-light dark:text-text-secondary-dark hidden sm:table-cell">EMP-001</td>
+<td class="px-6 py-4 text-sm text-text-secondary-light dark:text-text-secondary-dark hidden md:table-cell">Radiology</td>
+<td class="px-6 py-4 text-sm font-mono text-text-main-light dark:text-text-main-dark hidden lg:table-cell">SN-882910</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/30">
+<span class="size-1.5 rounded-full bg-emerald-500"></span>
+                                                Assigned
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium">Edit</button>
+</td>
+</tr>
+<!-- Row 2: Assigned -->
+<tr class="hover:bg-background-light/50 dark:hover:bg-background-dark/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8" data-alt="Portrait of Jane Smith" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBIQPK8lHCCaZurGrqpvLuqF0gn8rO0IuzybmOYBuo53C53RIXP_p7HNW5cbGtdbW1EVutzLbDnV8IcoE6ipX1XhzWFaX8zulAH1lRz2VcsHu0lYRkcIr0a-ZySVqbv23iEoPzS7wqP4Pq0WaohA1bC-fPjpvhQSTvtbJRWvcjsIXSACLixOBfzbMUqOAeb15CGoIDPbqUWkuBaqVF04YmXCfIXONMzC4ewkX-HnNE0yvhcV6drrqOuBHe8_c9MBwAcehvVaM4ONw");'></div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-text-main-light dark:text-white">Jane Smith</span>
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark sm:hidden">EMP-004</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-text-secondary-light dark:text-text-secondary-dark hidden sm:table-cell">EMP-004</td>
+<td class="px-6 py-4 text-sm text-text-secondary-light dark:text-text-secondary-dark hidden md:table-cell">Nuclear Med</td>
+<td class="px-6 py-4 text-sm font-mono text-text-main-light dark:text-text-main-dark hidden lg:table-cell">SN-882915</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/30">
+<span class="size-1.5 rounded-full bg-emerald-500"></span>
+                                                Assigned
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium">Edit</button>
+</td>
+</tr>
+<!-- Row 3: Missing -->
+<tr class="bg-red-50/50 dark:bg-red-900/5 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400 flex items-center justify-center text-xs font-bold">RB</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-text-main-light dark:text-white">Robert Brown</span>
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark sm:hidden">EMP-012</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-text-secondary-light dark:text-text-secondary-dark hidden sm:table-cell">EMP-012</td>
+<td class="px-6 py-4 text-sm text-text-secondary-light dark:text-text-secondary-dark hidden md:table-cell">Oncology</td>
+<td class="px-6 py-4 text-sm font-mono text-text-secondary-light dark:text-text-secondary-dark hidden lg:table-cell">--</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-400 border border-red-100 dark:border-red-900/30">
+<span class="material-symbols-outlined text-[14px]">priority_high</span>
+                                                Missing
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="inline-flex items-center justify-center px-3 py-1.5 text-xs font-bold text-white bg-primary hover:bg-primary-dark rounded-md shadow-sm transition-colors w-[80px]">
+                                                Assign
+                                            </button>
+</td>
+</tr>
+<!-- Row 4: Assigned -->
+<tr class="hover:bg-background-light/50 dark:hover:bg-background-dark/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-8" data-alt="Portrait of Emily White" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDhQv_tlxE_efhbt3HlvSFc9qcfTefF7YK2uvpxvXPZ7BU1jcI2wvLCTepnxn3o_cs8IzNEOG2hJlxCSnvBbaN9H7SV-Ata6Pi_eH2O7abtJt1ms98VzeLBnnUXHTeR5EdBU2kgCgShqfx6NYb9eastt2EzQ9l13LKsgNHNZRcwBpKDrzoZ4z2Klx7wP37-BWNk2amSurkYCY82MZDPa4PcYt7kI9ARHquQ4hQJ0hWJ6AiBIPREIN6UwgRsBfdOHYbBf2pb2zrRZQ");'></div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-text-main-light dark:text-white">Emily White</span>
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark sm:hidden">EMP-023</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-text-secondary-light dark:text-text-secondary-dark hidden sm:table-cell">EMP-023</td>
+<td class="px-6 py-4 text-sm text-text-secondary-light dark:text-text-secondary-dark hidden md:table-cell">Radiology</td>
+<td class="px-6 py-4 text-sm font-mono text-text-main-light dark:text-text-main-dark hidden lg:table-cell">SN-882922</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/30">
+<span class="size-1.5 rounded-full bg-emerald-500"></span>
+                                                Assigned
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium">Edit</button>
+</td>
+</tr>
+<!-- Row 5: Missing -->
+<tr class="bg-red-50/50 dark:bg-red-900/5 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold">MG</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-text-main-light dark:text-white">Michael Green</span>
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark sm:hidden">EMP-045</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-text-secondary-light dark:text-text-secondary-dark hidden sm:table-cell">EMP-045</td>
+<td class="px-6 py-4 text-sm text-text-secondary-light dark:text-text-secondary-dark hidden md:table-cell">Lab</td>
+<td class="px-6 py-4 text-sm font-mono text-text-secondary-light dark:text-text-secondary-dark hidden lg:table-cell">--</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-400 border border-red-100 dark:border-red-900/30">
+<span class="material-symbols-outlined text-[14px]">priority_high</span>
+                                                Missing
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="inline-flex items-center justify-center px-3 py-1.5 text-xs font-bold text-white bg-primary hover:bg-primary-dark rounded-md shadow-sm transition-colors w-[80px]">
+                                                Assign
+                                            </button>
+</td>
+</tr>
+<!-- Row 6: Assigned -->
+<tr class="hover:bg-background-light/50 dark:hover:bg-background-dark/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 flex items-center justify-center text-xs font-bold">SL</div>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-text-main-light dark:text-white">Sarah Lee</span>
+<span class="text-xs text-text-secondary-light dark:text-text-secondary-dark sm:hidden">EMP-058</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-text-secondary-light dark:text-text-secondary-dark hidden sm:table-cell">EMP-058</td>
+<td class="px-6 py-4 text-sm text-text-secondary-light dark:text-text-secondary-dark hidden md:table-cell">Oncology</td>
+<td class="px-6 py-4 text-sm font-mono text-text-main-light dark:text-text-main-dark hidden lg:table-cell">SN-882945</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-900/30">
+<span class="size-1.5 rounded-full bg-emerald-500"></span>
+                                                Assigned
+                                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium">Edit</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-between px-6 py-4 border-t border-border-light dark:border-border-dark bg-background-light/30 dark:bg-background-dark/30">
+<span class="text-sm text-text-secondary-light dark:text-text-secondary-dark">Showing 1 to 6 of 142 results</span>
+<div class="flex gap-2">
+<button class="flex items-center justify-center size-8 rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-card-dark text-text-secondary-light dark:text-text-secondary-dark hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<button class="flex items-center justify-center size-8 rounded-lg border border-border-light dark:border-border-dark bg-white dark:bg-card-dark text-text-secondary-light dark:text-text-secondary-dark hover:bg-gray-50 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
