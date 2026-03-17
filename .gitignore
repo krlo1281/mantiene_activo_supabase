@@ -1,0 +1,8 @@
+# Ignore everything by default
+/*
+
+# Except for these:
+!/.github/
+!/.github/workflows/
+!/.github/workflows/keep_alive.yml
+!/.gitignore
