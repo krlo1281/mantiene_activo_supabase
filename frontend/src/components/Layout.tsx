@@ -23,7 +23,7 @@ export default function Layout() {
             {/* Mobile Header */}
             <header className="md:hidden flex items-center justify-between p-4 bg-white dark:bg-[#1a2632] border-b border-[#e7edf3] dark:border-[#2a3a4a] sticky top-0 z-30 shadow-sm">
                 <div className="flex items-center gap-2">
-                    <img src="/logo2.png" alt="Logo" className="h-8 w-auto object-contain" />
+                    <img src="/logo2.png" alt="Logo" className="h-8 max-w-[120px] object-contain" />
                     <span className="font-semibold">Consola Admin</span>
                 </div>
                 <Button variant="ghost" size="icon" onClick={() => setSidebarOpen(!sidebarOpen)}>
@@ -43,7 +43,7 @@ export default function Layout() {
             <aside className={`fixed md:sticky top-0 left-0 z-50 h-[100dvh] w-64 flex-col justify-between bg-white dark:bg-[#1a2632] border-r border-[#e7edf3] dark:border-[#2a3a4a] transition-transform duration-300 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'} flex`}>
                 <div className="flex flex-col gap-4 p-4 overflow-y-auto">
                     <div className="hidden md:flex flex-col items-center justify-center gap-2 mb-6 mt-4">
-                        <img src="/logo2.png" alt="Logo" className="h-16 w-auto object-contain" />
+                        <img src="/logo2.png" alt="Logo" className="h-16 max-w-[180px] object-contain" />
                         <p className="text-[#4c739a] dark:text-[#94a3b8] text-sm font-medium leading-normal text-center">Consola Admin</p>
                     </div>
                     <nav className="flex flex-col gap-2">
